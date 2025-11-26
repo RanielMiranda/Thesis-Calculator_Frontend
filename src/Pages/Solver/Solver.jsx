@@ -9,6 +9,8 @@ import SolutionDisplay from './SolutionDisplay';
 import StepByStep from './StepByStep';
 import MeasurementDisplay from './MeasurementDisplay.jsx';
 
+const API_URL = import.meta.env.VITE_API_URL || "http://127.0.0.1:8000";
+
 const Solver = () => {
     // State for user input, expression, and configuration
     const [input, setInput] = React.useState('');
@@ -90,7 +92,10 @@ const Solver = () => {
         setProgress(0);
 
         try {
-            const eventSource = new EventSource(`http://127.0.0.1:8000/solve_stream?expression=${encodeURIComponent(input)}&variable=${variable}`);
+            const eventSource = new EventSource(
+                `${API_URL}/solve_stream?expression=${encodeURIComponent(input)}&variable=${variable}`
+            );
+
 
             eventSource.onmessage = (event) => {
                 const data = JSON.parse(event.data);
@@ -155,7 +160,7 @@ const Solver = () => {
     const generateExpression = async () => {
         setErrorMessage('');
         try {
-            const response = await fetch("http://127.0.0.1:8000/generate", {
+            const response = await fetch(`${API_URL}/generate`, {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify({
