@@ -78,7 +78,7 @@ const InputField = ({ input, handleInputChange, setInput, solveExpression, inser
       <div className="flex flex-col pt-4">
         <h className="text-primary font-bold text-lg">This is Displayed as:</h>
         <div className="flex bg-secondary w-full mx-auto rounded-md p-2 items-center justify-center">
-          <MathJax className = "text-dark">
+          <MathJax className = "text-dark" inline dynamic>
             {`$$\\frac{d}{dx} = ${formatForMathJax(input)}$$`}
           </MathJax>
         </div>
