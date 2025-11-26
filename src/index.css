@@ -1,0 +1,32 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.light {
+  /* Light mode defaults */
+  --primary: 63, 124, 245; /* Lighter Blue #3f7cf5 */
+  --primarylight: 86, 154, 255; /* Lighter Light Blue #569aff */
+  --secondary: 226, 232, 240; /* Light Gray #e2e8f0 */
+  --bgcolor: 240, 240, 240; /* Darker White #f0f0f0 */
+  --dark: 30, 41, 59; /* Dark Gray #1e293b */
+  --light: 248, 250, 252; /* White #f8fafc */
+  --border: 226, 232, 240; /* Light Gray #e2e8f0 */
+  --gradient1: 240, 244, 255; /* Very Light Blue #f0f4ff */
+  --gradient2: 230, 240, 255; /* Light Blue #e6f0ff */
+}
+
+
+.dark {
+  /* Dark overrides */
+  --primary: 37, 99, 235; /* Blue #2595eb */
+  --primarylight: 59, 130, 246; /* Light Blue #3b82f6 */
+  --secondary: 28, 36, 52; /* Darker Blue #404067 */
+  --bg: 28, 33, 42;     /* Dark Gray #1c212a */
+  --light: 30, 41, 59; /* Dark Gray #1e293b */
+  --dark: 248, 250, 252; /* White #f8fafc */
+  --border: 226, 232, 240; /* Light Gray #e2e8f0 */
+  --gradient1: 25, 32, 46; /* Dark Blue #384256 */
+  --gradient2: 28, 36, 52;; /* Darker Blue #404067 */
+}
+
+
